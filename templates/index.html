@@ -193,34 +193,36 @@
             {% endif %}
 
 
-            {% if other_donors %}
-                <div class="section-title">🌍 Donors in Other Locations</div>
-                {% for donor in local_donors %}
-                    <div class="donor-card">
-                        <div class="donor-name">{{ donor[0] }}</div>
-                        <div class="donor-phone">📞 {{ donor[1] }}</div>
-                        <div class="donor-location">📍 {{ donor[2] }}</div>
-                        <div class="donor-email">✉️ {{ donor[3] }}</div>
+        {% if other_donors %}
+            <div class="section-title">🌍 Donors in Other Locations</div>
+            {% for donor in other_donors %}
+                <div class="donor-card">
+                    <div class="donor-name">{{ donor[0] }}</div>
+                    <div class="donor-phone">📞 {{ donor[1] }}</div>
+                    <div class="donor-location">📍 {{ donor[2] }}</div>
+                    <div class="donor-email">✉️ {{ donor[3] }}</div>
 
-                        <div style="margin-top:10px; display:flex; gap:10px;">
-                            <!-- Call button -->
-                            <a href="tel:{{ donor[1] }}">
-                                <button style="background:#28a745; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer;">
-                                    📞 Call
-                                </button>
-                            </a>
+                    <div style="margin-top:10px; display:flex; gap:10px;">
+                        <!-- Call button -->
+                        <a href="tel:{{ donor[1] }}">
+                            <button style="background:#28a745; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer;">
+                                📞 Call
+                            </button>
+                        </a>
 
-                            <!-- Email button -->
-                            <a href="mailto:{{ donor[3] }}?subject=Urgent Blood Donation Request&body=Dear {{ donor[0] }},%0D%0A%0D%0AI hope this message finds you well.%0D%0AWe are in urgent need of your blood donation (Blood Group: {{ donor[4] }}).%0D%0AIf you are available, please contact me at the earliest.%0D%0A%0D%0AThank you for your support and kindness.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]">
-                                <button style="background:#007bff; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer;">
-                                    ✉️ Email
-                                </button>
-                            </a>
-                        </div>
+                        <!-- Email button -->
+                        <a href="mailto:{{ donor[3] }}?subject=Urgent Blood Donation Request&body=Dear {{ donor[0] }},%0D%0A%0D%0AI hope this message finds you well.%0D%0AWe are in urgent need of your blood donation (Blood Group: {{ donor[4] }}).%0D%0AIf you are available, please contact me at the earliest.%0D%0A%0D%0AThank you for your support and kindness.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]">
+                            <button style="background:#007bff; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer;">
+                                ✉️ Email
+                            </button>
+                        </a>
                     </div>
-                {% endfor %}
-            {% endif %}
+                </div>
+            {% endfor %}
         {% endif %}
+    {% endif %}
+
+
     </div>
 
 </body>
