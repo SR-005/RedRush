@@ -11,7 +11,7 @@ Long Description about project. This project do that. This project is awesome...
 ## Team members
 1. [Sreeram V Gopal]([https://github.com/TH-Activities/saturday-hack-night-template](https://github.com/SR-005))
 ## Link to product walkthrough
-[link to video](Link Here)
+[link to video]([Link Here](https://drive.google.com/file/d/1yd3EYcsLw1Au5p_yS71NfB7bmtbS0Jxp/view?usp=sharing))
 ## How it Works ?
 1. A donor registers by entering their name, phone number, email, blood group, and location.  
 2. A person in need can search by **blood group** and optionally filter by **location**.  
@@ -24,6 +24,6 @@ Long Description about project. This project do that. This project is awesome...
 - **Jinja2** - 3.1.3  
 - **SQLite3** (built-in with Python)  
 ## How to configure
-Instructions for setting up project
+--
 ## How to Run
-Instructions for running
+https://redrush.onrender.com
