@@ -6,9 +6,9 @@
 
 
 
-# NasaHub  
+# RedRush
 
-NasaHub is a platform designed to connect blood donors with people in urgent need of blood. Users can register themselves as donors by providing details like name, blood group, contact information, and location. People searching for blood can filter by blood group and location to quickly find suitable donors.  
+RedRush is a platform designed to connect blood donors with people in urgent need of blood. Users can register themselves as donors by providing details like name, blood group, contact information, and location. People searching for blood can filter by blood group and location to quickly find suitable donors.  
 
 This project ensures that emergency blood requirements can be fulfilled faster by making donor information more accessible and organized. It also provides direct call and email options for easier communication.  
 
