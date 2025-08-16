@@ -5,25 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedRush - Search Donors</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; color: #333; }
-        header { background: #c82333; color: white; text-align: center; padding: 20px 0; }
-        header h1 { margin: 0; font-size: 2rem; }
-        .container { max-width: 800px; margin: 40px auto; background: white; padding: 25px 30px; border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.1); }
-        h2 { margin-top: 30px; color: #c82333; text-align: center; }
-        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-        form input { padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem; width: 100%; }
-        form button { background: #c82333; color: white; border: none; padding: 12px 18px; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: 0.3s; }
-        form button:hover { background: #a71d2a; }
-        .add-btn { display: block; text-align: center; margin: 20px 0; }
-        .add-btn button { background: #28a745; padding: 10px 20px; font-size: 1rem; border-radius: 8px; border: none; color: white; cursor: pointer; transition: 0.3s; }
-        .add-btn button:hover { background: #218838; }
-        .donor-card { background: #fefefe; border: 1px solid #ddd; padding: 20px; border-radius: 12px; margin: 15px 0; box-shadow: 0px 3px 8px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .donor-card:hover { transform: scale(1.02); }
-        .donor-name { font-size: 1.4rem; font-weight: bold; color: #c82333; margin-bottom: 8px; }
-        .donor-phone, .donor-location, .donor-email { font-size: 1rem; margin: 3px 0; color: #444; }
-        .donor-email { color: #0066cc; }
-        p { text-align: center; font-style: italic; color: #555; }
-        .section-title { text-align: left; margin-top: 30px; font-size: 1.2rem; color: #333; font-weight: bold; border-left: 5px solid #c82333; padding-left: 10px; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #c82333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #c82333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        form button {
+            background: #c82333;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #a71d2a;
+        }
+
+        .add-btn {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .add-btn button {
+            background: #28a745;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-btn button:hover {
+            background: #218838;
+        }
+
+        .donor-card {
+            background: #fefefe;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .donor-card:hover {
+            transform: scale(1.02);
+        }
+
+        .donor-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #c82333;
+            margin-bottom: 8px;
+        }
+
+        .donor-phone,
+        .donor-location,
+        .donor-email {
+            font-size: 1rem;
+            margin: 3px 0;
+            color: #444;
+        }
+
+        .donor-email {
+            color: #0066cc;
+        }
+
+        p {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+        }
+
+        .section-title {
+            text-align: left;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+            border-left: 5px solid #c82333;
+            padding-left: 10px;
+        }
+
     </style>
 </head>
 <body>

@@ -1,6 +1,7 @@
 import sqlite3
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 #--------------------------------SQL SETUP--------------------------------
@@ -12,6 +13,7 @@ conn.commit()
 
 #--------------------------------APP--------------------------------
 app = FastAPI(title="RedRush", description="Instant Blood Donor Matcher")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
