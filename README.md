@@ -9,15 +9,20 @@
 # Project Name
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. [Name 1](https://github.com/TH-Activities/saturday-hack-night-template)
-2. [Name 2](https://github.com/TH-Activities/saturday-hack-night-template)
+1. [Sreeram V Gopal]([https://github.com/TH-Activities/saturday-hack-night-template](https://github.com/SR-005))
 ## Link to product walkthrough
 [link to video](Link Here)
 ## How it Works ?
-1. Explaining the working of project
-2. Embed video of project demo
+1. A donor registers by entering their name, phone number, email, blood group, and location.  
+2. A person in need can search by **blood group** and optionally filter by **location**.  
+3. If matching donors are found in the same location, they are shown first.  
+4. If no local donor is found, the app still lists all other donors of the required blood group in a separate section.  
+5. Each donor card has direct **Call** 📞 and **Email** ✉️ buttons for instant contact.
 ## Libraries used
-Library Name - Version
+- **FastAPI** - 0.110.0  
+- **Uvicorn** - 0.27.1  
+- **Jinja2** - 3.1.3  
+- **SQLite3** (built-in with Python)  
 ## How to configure
 Instructions for setting up project
 ## How to Run
