@@ -1,19 +1,18 @@
 import sqlite3
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 #--------------------------------SQL SETUP--------------------------------
 conn = sqlite3.connect("donors.db", check_same_thread=False)
 cursor = conn.cursor() 
 
+'''cursor.execute("DROP TABLE DONORS")'''
 cursor.execute("CREATE TABLE IF NOT EXISTS DONORS(NAME TEXT, BLOODGROUP TEXT, PHONE TEXT, LOCATION TEXT, EMAIL TEXT)")
 conn.commit()
 
 #--------------------------------APP--------------------------------
 app = FastAPI(title="RedRush", description="Instant Blood Donor Matcher")
-app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
