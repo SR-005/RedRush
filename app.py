@@ -11,8 +11,8 @@ import os
 conn = sqlite3.connect("donors.db", check_same_thread=False)
 cursor = conn.cursor() 
 
-'''cursor.execute("DROP TABLE IF EXISTS DONORS")'''
-cursor.execute("CREATE TABLE IF NOT EXISTS DONORS(NAME TEXT,BLOODGROUP TEXT,PHONE INT,LOCATION TEXT)")
+cursor.execute("DROP TABLE IF EXISTS DONORS")
+cursor.execute("CREATE TABLE IF NOT EXISTS DONORS(NAME TEXT, BLOODGROUP TEXT, PHONE TEXT, LOCATION TEXT, EMAIL TEXT)")
 conn.commit()
 
 #--------------------------------APP--------------------------------
@@ -29,10 +29,9 @@ def home(request: Request):
 
 @app.post("/search", response_class=HTMLResponse)
 def search_donors(request: Request, bloodgroup: str = Form(...)):
-    cursor.execute("SELECT name, phone, location FROM donors WHERE bloodgroup = ?", (bloodgroup,))
+    cursor.execute("SELECT name, phone, location, email FROM donors WHERE bloodgroup = ?", (bloodgroup,))
     donors = cursor.fetchall()
     return templates.TemplateResponse("index.html", {"request": request, "donors": donors})
-
 
 @app.get("/add_donor", response_class=HTMLResponse)
 def add_donor_page(request: Request):
@@ -40,7 +39,15 @@ def add_donor_page(request: Request):
 
 
 @app.post("/add_donor", response_class=HTMLResponse)
-def add_donor(request: Request, name: str = Form(...), bloodgroup: str = Form(...), phone: str = Form(...), location: str = Form(...)):
-    cursor.execute("INSERT INTO DONORS (name, bloodgroup, phone, location) VALUES (?, ?, ?, ?)",(name, bloodgroup, phone, location))
+def add_donor(
+    request: Request, 
+    name: str = Form(...), 
+    bloodgroup: str = Form(...), 
+    phone: str = Form(...), 
+    location: str = Form(...),
+    email: str = Form(...)
+):
+    cursor.execute("INSERT INTO DONORS (name, bloodgroup, phone, location, email) VALUES (?, ?, ?, ?, ?)",
+                   (name, bloodgroup, phone, location, email))
     conn.commit()
     return RedirectResponse("/", status_code=303)
